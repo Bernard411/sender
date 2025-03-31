@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control Serial Script</title>
+    <script>
+        function controlScript(action) {
+            fetch(`/control/${action}/`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("status").innerText = data.status;
+                })
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Control Serial Script</h1>
+    <button onclick="controlScript('start')">Start Script</button>
+    <button onclick="controlScript('stop')">Stop Script</button>
+    <p>Status: <span id="status">Idle</span></p>
+</body>
+</html>
