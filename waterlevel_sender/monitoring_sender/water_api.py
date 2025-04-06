@@ -5,7 +5,7 @@ import time
 # Local Config
 SERIAL_PORT = "/dev/ttyACM0"  # Change this if using a different port
 BAUD_RATE = 9600
-REMOTE_API_URL = "https://chief265.pythonanywhere.com/api/update_data/"
+REMOTE_API_URL = "https://innocent2025.pythonanywhere.com/api/update_data/"
 
 # Initialize serial connection
 try:

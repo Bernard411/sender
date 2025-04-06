@@ -3,7 +3,7 @@ import json
 from django.http import JsonResponse
 import random
 
-REMOTE_API_URL = "https://chief265.pythonanywhere.com/api/update_data/"
+REMOTE_API_URL = "https://innocent2025.pythonanywhere.com/api/update_data/"
 
 def send_data(request):
     sensor_value = random.uniform(10, 100)
