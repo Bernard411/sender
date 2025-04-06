@@ -57,5 +57,42 @@ def control_script(request, action):
 
     return JsonResponse({"status": "Invalid action"})
 
+# import subprocess
+# import os
+# from django.http import JsonResponse
+# from django.shortcuts import render
+# import platform
+
+# # Get the directory of the current file (views.py)
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# SCRIPT_PATH = os.path.join(BASE_DIR, "water_api.py")
+
+# # Store process ID globally
+# process = None
+
+# def control_script(request, action):
+#     global process
+
+#     # Choose the right python command based on OS
+#     python_command = "python3" if platform.system() != "Windows" else "python"
+
+#     if action == "start":
+#         if process is None:
+#             process = subprocess.Popen([python_command, SCRIPT_PATH], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#             return JsonResponse({"status": "Script started"})
+#         else:
+#             return JsonResponse({"status": "Already running"})
+
+#     elif action == "stop":
+#         if process:
+#             process.terminate()  # Stop the script
+#             process = None
+#             return JsonResponse({"status": "Script stopped"})
+#         else:
+#             return JsonResponse({"status": "Not running"})
+
+#     return JsonResponse({"status": "Invalid action"})
+
+
 def control_page(request):
     return render(request, "control.html")
